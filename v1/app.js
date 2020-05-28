@@ -17,7 +17,14 @@ var commentRoutes=require("./routes/comments"),
 	campgroundRoutes=require("./routes/campgrounds"),
 	authRoutes=require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/website", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://shiristy:yelpcamp@cluster0-ibvyr.mongodb.net/test?retryWrites=true&w=majority', {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then (() => {
+	console.log('Connected to DB');
+}).catch(err => {
+	console.log('ERROR: ', err.messgae);
+});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
