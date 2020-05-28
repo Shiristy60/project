@@ -52,6 +52,7 @@ app.use(authRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-app.listen(200, function(){
-	console.log("YelpCamp has started!!");
+var port = process.env.PORT || 200;
+app.listen(port, function(){
+  console.log("Server Has Started!");
 })
