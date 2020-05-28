@@ -19,6 +19,7 @@ var commentRoutes=require("./routes/comments"),
 
 mongoose.connect('mongodb+srv://shiristy:yelpcamp@cluster0-ibvyr.mongodb.net/test?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
+	useUnifiedTopology: true,
 	useCreateIndex: true
 }).then (() => {
 	console.log('Connected to DB');
